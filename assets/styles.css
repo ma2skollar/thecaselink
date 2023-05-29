@@ -115,6 +115,12 @@
     background-color: var(--hl-color3);
   }
 
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .s1 {
     height: 590px;
     width: 100%;
@@ -143,6 +149,7 @@
 
   .box-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     align-content: center;
     justify-content: center;
@@ -154,7 +161,6 @@
   }
 
   .gradient-title {
-    width: 100%;
     margin: 0;
     text-align: center;
     font-weight: var(--font-bold);
@@ -190,6 +196,30 @@
     background-color: var(--bg-color3);
     clip-path: polygon(0 106px, 100% 0, 100% 828px, 0 934px);
     -webkit-clip-path: polygon(0 106px, 100% 0, 100% 828px, 0 934px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .empty-container {
+    margin: 106px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .divider {
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+    border-top: 2px solid rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.4);
+    width: 820px;
+    height: 2px;
+    text-align: center;
   }
 
   .s3 {
