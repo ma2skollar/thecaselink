@@ -1,0 +1,39 @@
+:root {
+    --bg-color1: #ECEDEE;
+    --bg-color2: #FFFFFF;
+    --bg-color3: #0999FF;
+
+    --text-color1: #000000;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    top: 0;
+}
+
+nav {
+    background-color: var(--bg-color1);
+    height: 100%;
+}
+
+nav > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inner-ul {
+    display: flex;
+    justify-content: flex;
+}
+
+.inner-ul > li > a {
+    display: block;
+    padding: 45px 25px;
+}
