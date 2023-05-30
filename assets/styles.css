@@ -171,6 +171,7 @@
     background: -webkit-linear-gradient(to right, #005e8c 0%, #1479ca 100%);
     background: -moz-linear-gradient(to right, #005e8c 0%, #1479ca 100%);
     background: linear-gradient(to right, #005e8c 0%, #1479ca 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -374,7 +375,6 @@
     text-decoration: none;
     display: block;
     position: relative;
-    /* padding: 0.2em 0; */
     overflow: hidden;
   }
 
