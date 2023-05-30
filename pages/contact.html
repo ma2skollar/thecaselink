@@ -166,7 +166,13 @@
       <section class="s2" id="form">
         <article class="empty-container">
           <!-- https://smtpjs.com/ -->
-          <form></form>
+          <form onsubmit="sendEmail()">
+            <input type="text" name="name" id="name" placeholder="Name">
+            <input type="text" name="surname" id="surname" placeholder="Surame">
+            <input type="text" name="email" id="email" placeholder="Email">
+            <textarea type="text" name="message" id="message" placeholder="Message"></textarea>
+            <input type="submit" value="Send Email" id="submit">
+          </form>
         </article>
       </section>
       <section class="s3" id="legal">
