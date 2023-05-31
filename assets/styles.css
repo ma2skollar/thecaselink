@@ -41,7 +41,7 @@
 }
 @media screen and (min-width: 821px) {
   html {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
 
   body {
@@ -58,8 +58,8 @@
     height: 100px;
     width: 100%;
     display: flex;
-    justify-content: space-around;
-    display: block;
+    justify-content: center;
+    display: flex;
     /* position: fixed; */
     z-index: 10;
     /* opacity: 0.75; */
