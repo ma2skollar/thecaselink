@@ -165,9 +165,10 @@
       </section>
       <section class="s2" id="form">
         <article class="empty-container">
-          
           <h1 class="light-title">Leave us a Message</h1>
-          <p class="light-text">In our contact form you can post messages for us to read.</p>
+          <p class="light-text">
+            In our contact form you can post messages for us to read.
+          </p>
           <form onsubmit="sendEmail(); return false;">
             <input
               type="text"
@@ -205,11 +206,18 @@
       <section class="s3" id="legal">
         <article class="empty-container">
           <h1 class="gradient-title">Legal</h1>
-          <p class="dark-text">
+          <p class="dark-text links-recolor">
             The details of data collection by this website are written in detail
             in our privacy policy. If you have any more questions, do not
             hesitate to contact our legal department at
             <a href="mailto:legal@thecaselink.com">legal@thecaselink.com</a>
+            <br /><br />
+            You can also review our privacy policy here:
+            <a
+              href="/assets/PrivacyPolicy_TheCaseLink.com_31052023.pdf"
+              download
+              >Privacy Policy</a
+            >
           </p>
         </article>
       </section>
@@ -232,18 +240,26 @@
           <a href="/pages/contact.html#legal"
             ><span class="semi-bold">Legal</span></a
           >
-          <a href="">Privacy Policy</a>
+          <a href="/assets/PrivacyPolicy_TheCaseLink.com_31052023.pdf" download
+            >Privacy Policy</a
+          >
         </div>
         <div class="socials">
-          <a href=""><img src="/assets/facebook.svg" alt="Facebook link" /></a>
-          <a href=""><img src="/assets/linkedin.svg" alt="Linkedin link" /></a>
+          <a href="" target="_blank"
+            ><img src="/assets/facebook.svg" alt="Facebook link"
+          /></a>
+          <a href="" target="_blank"
+            ><img src="/assets/linkedin.svg" alt="Linkedin link"
+          /></a>
           <a href="/index.html"
             ><img src="/assets/footer_icon.svg" alt="TheCaseLink logo"
           /></a>
-          <a href=""
+          <a href="" target="_blank"
             ><img src="/assets/instagram.svg" alt="Instagram link"
           /></a>
-          <a href="https://github.com/ma2skollar/thecaselink.github.io"
+          <a
+            href="https://github.com/ma2skollar/thecaselink.github.io"
+            target="_blank"
             ><img src="/assets/github.svg" alt="Github link"
           /></a>
         </div>
@@ -275,32 +291,38 @@
           From: "emailformsender@thecaselink.com",
           Subject: "Automated Email Form from " + senderEmail.value,
           Body:
-            "Content: " + content.value +
+            "Content: " +
+            content.value +
             "<br><br>" +
-            "Name: " + senderName.value +
+            "Name: " +
+            senderName.value +
             " " +
-            "Surname: " + senderSurname.value +
-            "Email: " + senderEmail.value,
+            "Surname: " +
+            senderSurname.value +
+            "Email: " +
+            senderEmail.value,
         })
-        .then((message) => {
-          console.log(message);
-          if (message === "OK") {
-            console.log("Email sent successfully!");
-            form.reset();
-            formStatus.innerHTML = "<span style='color: #00ae59;'>✓</span> Form sent successfully!";
+          .then((message) => {
+            console.log(message);
+            if (message === "OK") {
+              console.log("Email sent successfully!");
+              form.reset();
+              formStatus.innerHTML =
+                "<span style='color: #00ae59;'>✓</span> Form sent successfully!";
+              formStatus.style.display = "block";
+            } else {
+              console.log("Failed to send email!");
+              formStatus.innerHTML =
+                "<span style='color: #ff5f52;'>✗</span> Failed to send form! Try again.";
+              formStatus.style.display = "block";
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+            formStatus.innerHTML =
+              "<span style='color: #ff5f52;'>✗</span> Failed to send form! Try again.";
             formStatus.style.display = "block";
-          } else {
-            console.log("Failed to send email!");
-            formStatus.innerHTML = "<span style='color: #ff5f52;'>✗</span> Failed to send form! Try again.";
-            formStatus.style.display = "block";
-          }
-          
-        })
-        .catch((err) => {
-          console.log(err);
-          formStatus.innerHTML = "<span style='color: #ff5f52;'>✗</span> Failed to send form! Try again.";
-          formStatus.style.display = "block";
-        });
+          });
       };
     </script>
   </body>

@@ -59,9 +59,14 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
+    display: block;
+    /* position: fixed; */
+    z-index: 10;
+    /* opacity: 0.75; */
   }
 
   nav > ul {
+    /* opacity: 1; */
     height: 100%;
     margin: 0;
     padding: 0;
@@ -128,6 +133,7 @@
   }
 
   .s1 {
+    /* height: 690px; */
     height: 590px;
     width: 100%;
     background: rgb(206, 235, 255);
@@ -515,5 +521,9 @@
 
   .copyright-notice {
     grid-area: 4 / 1 / 5 / 4;
+  }
+
+  .links-recolor > a {
+    color: var(--text-color1);
   }
 }
