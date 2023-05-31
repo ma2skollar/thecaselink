@@ -374,8 +374,17 @@
     font-family: var(--default-font);
     font-size: var(--font-paragraph);
     font-weight: var(--font-bold);
-    color: var(--shade-color1);
+    color: var(--text-color1);
     padding-left: 14px;
+  }
+
+  form > .field::placeholder {
+    color: var(--shade-color1);
+    opacity: 1;
+  }
+
+  form > .field:focus {
+    outline: 1px solid var(--h1-color3);
   }
 
   form > textarea {
@@ -389,28 +398,36 @@
     height: 40px;
     margin-right: 5px;
   }
+  
   form > #surname {
     grid-area: 1 / 2 / 2 / 3;
     width: 230px;
     height: 40px;
     margin-left: 5px;
   }
+
   form > #email {
     grid-area: 2 / 1 / 3 / 3;
     width: 470px;
     height: 40px;
   }
+
   form > #message {
     grid-area: 3 / 1 / 4 / 3;
     width: 470px;
     height: 110px;
   }
+
   form > #submit {
     grid-area: 4 / 1 / 5 / 3;
     justify-self: center;
     display: block;
     width: 94px;
     height: 47px;
+  }
+
+  form > #submit:focus {
+    outline: 1px solid var(--h1-color3);
   }
 
   .form-status {
