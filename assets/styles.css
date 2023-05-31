@@ -39,9 +39,11 @@
     display: none;
   }
 }
+
 @media screen and (min-width: 821px) {
   html {
     overflow-x: hidden;
+    scroll-behavior: smooth;
   }
 
   body {
@@ -60,8 +62,8 @@
     display: flex;
     justify-content: center;
     display: flex;
-    /* position: fixed; */
     z-index: 10;
+    /* position: fixed; */
     /* opacity: 0.75; */
   }
 
@@ -293,9 +295,8 @@
     font-family: var(--default-font);
   }
 
-  .grid-team {
-    /* display: grid;
-    grid-template-columns: repeat(4, 1fr); */
+  /* Team Member Cards */
+  /*.flex-team {
     display: flex;
     min-width: 820px;
     flex-wrap: wrap;
@@ -352,8 +353,18 @@
 
   .card-back > p {
     max-width: 90%;
+  }*/
+
+  /* Team Description */
+  .team-desc {
+    width: 820px;
+    height: 100%;
+    display: grid;
+    grid-template: 1fr / repeat(3, 260px);
+    grid-gap: 20px;
   }
 
+  /* Contact form */
   form {
     display: grid;
     grid-template: 40px 40px 110px 47px 25px / 1fr 1fr;
@@ -422,12 +433,29 @@
     grid-area: 4 / 1 / 5 / 3;
     justify-self: center;
     display: block;
-    width: 94px;
+    min-width: 94px;
     height: 47px;
+    border: none;
+    border-radius: 3px;
+    font-family: var(--default-font);
+    font-size: var(--font-paragraph);
+    font-weight: var(--font-bold);
+    padding: 0 22px;
+    color: var(--bg-color2);
+    background-color: var(--hl-color2);
+    transition: color 0.2s, background-color 0.2s;
+  }
+
+  form > #submit:hover {
+    cursor: pointer;
+    background-color: var(--hl-color3);
+    color: var(--text-color2);
   }
 
   form > #submit:focus {
     outline: 1px solid var(--h1-color3);
+    background-color: var(--hl-color3);
+    color: var(--text-color2);
   }
 
   .form-status {
@@ -442,9 +470,10 @@
     color: var(--bg-color2);
   }
 
+  /* Footer */
   footer {
     width: 100%;
-    height: 460px;
+    height: 360px;
     background-color: #0999ff;
     display: flex;
     justify-content: center;
@@ -454,7 +483,7 @@
     width: 820px;
     height: 100%;
     display: grid;
-    grid-template: 3fr 3fr 3fr 1fr / repeat(3, 1fr);
+    grid-template: 2fr 3fr 4fr 2fr / repeat(3, 1fr);
     place-items: center;
     justify-content: center;
     align-self: center;
@@ -558,17 +587,17 @@
     text-decoration-color: rgba(255, 255, 255, 1);
   }
 
-  .margin-bottom-10 {
-    margin-bottom: 10px;
-  }
-
-  .margin-bottom-30 {
-    margin-bottom: 30px;
-  }
-
   .site-missing-heading {
     font-size: 130px;
     font-weight: var(--font-semibold);
     color: var(--shade-color1);
   }
+}
+
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+
+.margin-bottom-30 {
+  margin-bottom: 30px;
 }

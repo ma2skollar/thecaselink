@@ -156,14 +156,14 @@
     <footer>
       <div class="footer-grid-container">
         <div class="first-row">
-          <a href="/index.html"
+          <a href="/index.html#top"
             ><span class="semi-bold">TheCaseLink.com</span></a
           >
-          <a href="/index.html">Home</a>
-          <a href="/pages/about.html">About us</a>
+          <!-- <a href="/index.html">Home</a> -->
+          <a href="/pages/about.html#top">About us</a>
         </div>
         <div class="second-row">
-          <a href="/pages/contact.html"><span class="semi-bold">Contact</span></a>
+          <a href="/pages/contact.html#top"><span class="semi-bold">Contact</span></a>
           <a href="/pages/contact.html#form">Email</a>
           <!-- <a href="/pages/contact.html">Social</a> -->
         </div>
@@ -195,66 +195,13 @@
           /></a>
         </div>
         <div class="copyright-notice">
-          <p class="light-text">
-            ©Copyright 2023 TheCaseLink s. r. o. | All rights reserved.
+          <p class="light-text margin-bottom-10">
+            © Copyright 2023 TheCaseLink s. r. o. | All rights reserved.
+            <br>
+            Made by <a href="https://www.matuskollar.com/" class="footer-link">Matúš Kollár</a> in collaboration with <a href="https://blackwaterholdings.sk/" class="footer-link">Blackwater Digital</a>.
           </p>
         </div>
       </div>
     </footer>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script>
-      const form = document.querySelector("form");
-      const senderEmail = document.querySelector("#email");
-      const senderName = document.querySelector("#name");
-      const senderSurname = document.querySelector("#surname");
-      const content = document.querySelector("#message");
-      const formStatus = document.querySelector(".form-status");
-
-      window.onload = () => {
-        console.log("Page loaded!");
-        formStatus.style.display = "none";
-      };
-
-      const sendEmail = () => {
-        Email.send({
-          SecureToken: "47dd32cb-d19e-4dac-b9c7-9ac7fcd79303",
-          To: "emailform@thecaselink.com",
-          From: "emailformsender@thecaselink.com",
-          Subject: "Automated Email Form from " + senderEmail.value,
-          Body:
-            "Content: " +
-            content.value +
-            "<br><br>" +
-            "Name: " +
-            senderName.value +
-            " " +
-            "Surname: " +
-            senderSurname.value +
-            "Email: " +
-            senderEmail.value,
-        })
-          .then((message) => {
-            console.log(message);
-            if (message === "OK") {
-              console.log("Email sent successfully!");
-              form.reset();
-              formStatus.innerHTML =
-                "<span style='color: #00ae59;'>✓</span> Form sent successfully!";
-              formStatus.style.display = "block";
-            } else {
-              console.log("Failed to send email!");
-              formStatus.innerHTML =
-                "<span style='color: #ff5f52;'>✗</span> Failed to send form! Try again.";
-              formStatus.style.display = "block";
-            }
-          })
-          .catch((err) => {
-            console.log(err);
-            formStatus.innerHTML =
-              "<span style='color: #ff5f52;'>✗</span> Failed to send form! Try again.";
-            formStatus.style.display = "block";
-          });
-      };
-    </script>
   </body>
 </html>
