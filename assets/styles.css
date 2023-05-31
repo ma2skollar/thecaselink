@@ -17,6 +17,8 @@
   --h1-color2: #0999ff;
   --h1-color3: #002776;
 
+  --shade-color1: #A3ABBD;
+
   --default-font: "Titillium Web", "Trebuchet MS", Helvetica, sans-serif;
 
   --font-light: 300;
@@ -38,6 +40,10 @@
   }
 }
 @media screen and (min-width: 821px) {
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     overflow-x: hidden;
     margin: 0;
@@ -98,7 +104,7 @@
     font-size: var(--font-heading);
     font-weight: var(--font-bold);
     color: var(--text-color1);
-    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    transition: color 0.2s, background-color 0.2s;
   }
 
   .inner-ul > li > a.active {
@@ -267,7 +273,7 @@
     top: 600px;
     left: 20vw;
     color: rgba(255, 255, 255, 0.2);
-    font-size: 25rem;
+    font-size: 300px;
     font-family: var(--default-font);
   }
 
@@ -277,7 +283,7 @@
     top: 1040px;
     right: 20vw;
     color: rgba(255, 255, 255, 0.2);
-    font-size: 25rem;
+    font-size: 300px;
     font-family: var(--default-font);
   }
 
@@ -344,32 +350,73 @@
 
   form {
     display: grid;
-    grid-template: 1fr 1fr 3fr 1fr / 1fr 1fr;
-    width: 100%;
+    grid-template: 40px 40px 110px 47px 25px / 1fr 1fr;
+    width: 470px;
     height: 100%;
+    row-gap: 34px;
+    margin-top: 50px;
+  }
+
+  form > * {
+    box-sizing: border-box;
+  }
+
+  form > .field {
+    border: 1px solid var(--h1-color3);
+    border-radius: 3px;
+    background-color: var(--bg-color2);
+    font-family: var(--default-font);
+    font-size: var(--font-paragraph);
+    font-weight: var(--font-bold);
+    color: var(--shade-color1);
+    padding-left: 14px;
   }
 
   form > textarea {
     resize: none;
+    padding-top: 10px;
   }
 
   form > #name {
     grid-area: 1 / 1 / 2 / 2;
+    width: 230px;
+    height: 40px;
+    margin-right: 5px;
   }
   form > #surname {
     grid-area: 1 / 2 / 2 / 3;
+    width: 230px;
+    height: 40px;
+    margin-left: 5px;
   }
   form > #email {
     grid-area: 2 / 1 / 3 / 3;
+    width: 470px;
+    height: 40px;
   }
   form > #message {
     grid-area: 3 / 1 / 4 / 3;
+    width: 470px;
+    height: 110px;
   }
   form > #submit {
     grid-area: 4 / 1 / 5 / 3;
     justify-self: center;
     display: block;
-    width: 200px;
+    width: 94px;
+    height: 47px;
+  }
+
+  .form-status {
+    grid-area: 5 / 1 / 6 / 3;
+    justify-self: center;
+    display: none;
+    padding: 0;
+    margin: 0;
+    font-family: var(--default-font);
+    font-size: var(--font-paragraph);
+    font-weight: var(--font-semibold);
+    color: var(--bg-color2);
   }
 
   footer {

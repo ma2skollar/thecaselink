@@ -165,13 +165,40 @@
       </section>
       <section class="s2" id="form">
         <article class="empty-container">
-          <!-- https://smtpjs.com/ -->
-          <form onsubmit="sendEmail()">
-            <input type="text" name="name" id="name" placeholder="Name">
-            <input type="text" name="surname" id="surname" placeholder="Surame">
-            <input type="text" name="email" id="email" placeholder="Email">
-            <textarea type="text" name="message" id="message" placeholder="Message"></textarea>
-            <input type="submit" value="Send Email" id="submit">
+          
+          <h1 class="light-title">Leave us a Message</h1>
+          <p class="light-text">In our contact form you can post messages for us to read.</p>
+          <form onsubmit="sendEmail(); return false;">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Name"
+              class="field"
+            />
+            <input
+              type="text"
+              name="surname"
+              id="surname"
+              placeholder="Surame"
+              class="field"
+            />
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="Email"
+              class="field"
+            />
+            <textarea
+              type="text"
+              name="message"
+              id="message"
+              placeholder="Message"
+              class="field"
+            ></textarea>
+            <p class="form-status">Form sent successfully!</p>
+            <button type="submit" id="submit">Send Email</button>
           </form>
         </article>
       </section>
@@ -227,5 +254,54 @@
         </div>
       </div>
     </footer>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      const form = document.querySelector("form");
+      const senderEmail = document.querySelector("#email");
+      const senderName = document.querySelector("#name");
+      const senderSurname = document.querySelector("#surname");
+      const content = document.querySelector("#message");
+      const formStatus = document.querySelector(".form-status");
+
+      window.onload = () => {
+        console.log("Page loaded!");
+        formStatus.style.display = "none";
+      };
+
+      const sendEmail = () => {
+        Email.send({
+          SecureToken: "47dd32cb-d19e-4dac-b9c7-9ac7fcd79303",
+          To: "emailform@thecaselink.com",
+          From: "emailformsender@thecaselink.com",
+          Subject: "Automated Email Form from " + senderEmail.value,
+          Body:
+            "Content: " + content.value +
+            "<br><br>" +
+            "Name: " + senderName.value +
+            " " +
+            "Surname: " + senderSurname.value +
+            "Email: " + senderEmail.value,
+        })
+        .then((message) => {
+          console.log(message);
+          if (message === "OK") {
+            console.log("Email sent successfully!");
+            form.reset();
+            formStatus.innerHTML = "<span style='color: #00ae59;'>✓</span> Form sent successfully!";
+            formStatus.style.display = "block";
+          } else {
+            console.log("Failed to send email!");
+            formStatus.innerHTML = "<span style='color: #ff5f52;'>✗</span> Failed to send form! Try again.";
+            formStatus.style.display = "block";
+          }
+          
+        })
+        .catch((err) => {
+          console.log(err);
+          formStatus.innerHTML = "<span style='color: #ff5f52;'>✗</span> Failed to send form! Try again.";
+          formStatus.style.display = "block";
+        });
+      };
+    </script>
   </body>
 </html>
