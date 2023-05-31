@@ -17,7 +17,7 @@
   --h1-color2: #0999ff;
   --h1-color3: #002776;
 
-  --shade-color1: #A3ABBD;
+  --shade-color1: #a3abbd;
 
   --default-font: "Titillium Web", "Trebuchet MS", Helvetica, sans-serif;
 
@@ -336,7 +336,7 @@
   }
 
   .card-back {
-    background-color: #005CB8;
+    background-color: #005cb8;
     transform: rotateY(180deg);
     display: flex;
     align-items: center;
@@ -398,7 +398,7 @@
     height: 40px;
     margin-right: 5px;
   }
-  
+
   form > #surname {
     grid-area: 1 / 2 / 2 / 3;
     width: 230px;
@@ -468,7 +468,9 @@
     align-self: flex-start;
   }
 
-  .first-row > a, .second-row > a, .third-row > a {
+  .first-row > a,
+  .second-row > a,
+  .third-row > a {
     font-size: var(--font-paragraph);
     color: var(--bg-color2);
     font-weight: var(--font-light);
@@ -542,5 +544,21 @@
 
   .links-recolor > a {
     color: var(--text-color1);
+  }
+
+  .footer-link {
+    color: var(--bg-color2);
+    text-decoration: none;
+    font-weight: var(--font-semibold);
+    text-decoration: underline 1.2px rgba(255, 255, 255, 0);
+    transition: text-decoration-color 0.2s;
+  }
+
+  .footer-link:hover {
+    text-decoration-color: rgba(255, 255, 255, 1);
+  }
+
+  .margin-bottom-10 {
+    margin-bottom: 10px;
   }
 }
