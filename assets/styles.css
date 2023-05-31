@@ -561,4 +561,14 @@
   .margin-bottom-10 {
     margin-bottom: 10px;
   }
+
+  .margin-bottom-30 {
+    margin-bottom: 30px;
+  }
+
+  .site-missing-heading {
+    font-size: 130px;
+    font-weight: var(--font-semibold);
+    color: var(--shade-color1);
+  }
 }

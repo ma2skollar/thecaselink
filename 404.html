@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home | TheCaseLink.com</title>
+    <title>Page not found | TheCaseLink.com</title>
     <link rel="stylesheet" href="/assets/styles.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -142,68 +142,16 @@
           </a>
         </li>
         <div class="inner-ul">
-          <li><a href="/index.html" class="active">Home</a></li>
+          <li><a href="/index.html">Home</a></li>
           <li><a href="/pages/about.html">About</a></li>
-          <li><a href="/pages/contact.html">Contact</a></li>
+          <li><a href="/pages/contact.html" class="active">Contact</a></li>
         </div>
       </ul>
     </nav>
     <main>
-      <section class="s1">
-        <article class="box-container">
-          <h1 class="gradient-title">
-            Find Teams for Your Competition With Us!
-          </h1>
-          <p class="dark-text">
-            Having trouble finding teams for your case competition? Don’t have
-            the relevant contacts or can’t find teams that would participate?
-            Organizing a case competition is hard enough, so let us handle the
-            contacting. We will get you in touch with teams that are interested
-            in your case competition and will take the burden of all the
-            communication for you. We have a network of contacts from
-            universities from all over the world. All that you need is to
-            contact us, and this network can be yours to utilize.
-          </p>
-        </article>
-      </section>
-      <section class="s2">
-        <article class="empty-container">
-          <h1 class="light-title" id="step1">Contact Us</h1>
-          <p class="light-text">
-            Don’t know how to get in touch with us? We made it very simple. Head
-            over to the contact page and just fill out the contact form. Upon
-            receiving your email, one of our team members will get in touch with
-            you to discuss your needs for your competition. We pride ourselves
-            in great customer service, so don’t worry your vision is our
-            inspiration to do things the right way.
-          </p>
-          <hr class="divider" />
-          <h1 class="light-title" id="step2">Receive Only Relevant Contacts</h1>
-          <p class="light-text">
-            Universities and teams not answering your emails? Worried that you
-            might not find teams which will participate in your case
-            competition? Don’t worry. Our network is built on reliable contacts
-            with whom we have worked before and find trustworthy. And we believe
-            you will do so to, once you get to know them. To do so, just contact
-            us and we will make sure to attend your needs.
-          </p>
-        </article>
-      </section>
-      <section class="s3">
-        <article class="empty-container">
-          <h1 class="gradient-title">What Is a Case Competition?</h1>
-          <p class="dark-text">
-            A case competition is a competition where different teams, mainly of
-            students and enthusiasts of creative thinking and problem solving
-            come together to measure their skills and test who can create the
-            best solution to the case problem. A case competition is about
-            communication and presentation skills, creative and agile thinking
-            and connects such people together, to compete on a common
-            battleground. At TheCaseLink we strive to make it simple for such a
-            community to be in touch.
-          </p>
-        </article>
-      </section>
+        <h1 class="site-missing-heading">404</h1>
+        <p class="dark-text margin-bottom-30"><span class="semi-bold">File not found</span></p>
+        <p class="dark-text links-recolor margin-bottom-30">The page you are looking for does not exist under this name. Try searching under a different name or contact support at <a href="mailto:admin@thecaselink.com">admin@thecaselink.com</a>.</p>
     </main>
     <footer>
       <div class="footer-grid-container">
@@ -247,13 +195,66 @@
           /></a>
         </div>
         <div class="copyright-notice">
-          <p class="light-text margin-bottom-10">
-            © Copyright 2023 TheCaseLink s. r. o. | All rights reserved.
-            <br>
-            Made by <a href="https://www.matuskollar.com/" class="footer-link">Matúš Kollár</a> in collaboration with <a href="https://blackwaterholdings.sk/" class="footer-link">Blackwater Digital</a>.
+          <p class="light-text">
+            ©Copyright 2023 TheCaseLink s. r. o. | All rights reserved.
           </p>
         </div>
       </div>
     </footer>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      const form = document.querySelector("form");
+      const senderEmail = document.querySelector("#email");
+      const senderName = document.querySelector("#name");
+      const senderSurname = document.querySelector("#surname");
+      const content = document.querySelector("#message");
+      const formStatus = document.querySelector(".form-status");
+
+      window.onload = () => {
+        console.log("Page loaded!");
+        formStatus.style.display = "none";
+      };
+
+      const sendEmail = () => {
+        Email.send({
+          SecureToken: "47dd32cb-d19e-4dac-b9c7-9ac7fcd79303",
+          To: "emailform@thecaselink.com",
+          From: "emailformsender@thecaselink.com",
+          Subject: "Automated Email Form from " + senderEmail.value,
+          Body:
+            "Content: " +
+            content.value +
+            "<br><br>" +
+            "Name: " +
+            senderName.value +
+            " " +
+            "Surname: " +
+            senderSurname.value +
+            "Email: " +
+            senderEmail.value,
+        })
+          .then((message) => {
+            console.log(message);
+            if (message === "OK") {
+              console.log("Email sent successfully!");
+              form.reset();
+              formStatus.innerHTML =
+                "<span style='color: #00ae59;'>✓</span> Form sent successfully!";
+              formStatus.style.display = "block";
+            } else {
+              console.log("Failed to send email!");
+              formStatus.innerHTML =
+                "<span style='color: #ff5f52;'>✗</span> Failed to send form! Try again.";
+              formStatus.style.display = "block";
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+            formStatus.innerHTML =
+              "<span style='color: #ff5f52;'>✗</span> Failed to send form! Try again.";
+            formStatus.style.display = "block";
+          });
+      };
+    </script>
   </body>
 </html>
