@@ -41,7 +41,7 @@
 }
 @media screen and (min-width: 821px) {
   html {
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
   }
 
   body {
