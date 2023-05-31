@@ -650,10 +650,23 @@
     text-decoration-color: rgba(255, 255, 255, 1);
   }
 
+  /* 404 Page */
   .site-missing-heading {
     font-size: 130px;
     font-weight: var(--font-semibold);
     color: var(--shade-color1);
+    position: relative;
+  }
+
+  .site-missing-heading::before {
+    position: absolute;
+    content: '404';
+    top: 0;
+    left: 0;
+    font-size: 600px;
+    z-index: -1;
+    transform: translate(-395px, -350px);
+    opacity: 0.2;
   }
 }
 
