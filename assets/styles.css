@@ -275,6 +275,28 @@
     align-items: center;
   }
 
+  .s3 > .empty-container,
+  .s3 > .team-container {
+    position: relative;
+  }
+
+  .s3 > .empty-container > .gradient-title::after,
+  .s3 > .team-container > .gradient-title::after {
+    content: url(/assets/background_logo.svg);
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    opacity: 0.05;
+    margin: -50px -300px 0 0;
+    transform: scale(10);
+    z-index: -1;
+  }
+
+  .s3 > .team-container > .gradient-title::after {
+    margin: 50px -300px 0 0;
+  }
+
   #step1::before {
     content: "1";
     position: absolute;
