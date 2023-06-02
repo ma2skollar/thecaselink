@@ -285,18 +285,39 @@
     justify-content: center;
   }
 
+  #to-contact-form {
+    position: absolute;
+    left: 116.89px;
+    top: 1140px;
+    font-weight: var(--font-semibold);
+    font-size: var(--font-paragraph);
+    text-align: center;
+  }
+
+  #to-contact-form > a {
+    display: block;
+    padding: 20px;
+    color: var(--bg-color2);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  #to-contact-form > a:focus {
+    color: var(--bg-color1);
+  }
+
   .empty-container {
     width: 300px;
   }
 
   .divider-mobile-margin {
-    margin-top: 60px;
+    margin-top: 220px;
   }
 
   #step1::before {
     content: "1";
     position: absolute;
-    top: 680px;
+    top: 660px;
     left: -18vw;
     color: rgba(255, 255, 255, 0.2);
     font-size: 400px;
@@ -306,7 +327,7 @@
   #step2::before {
     content: "2";
     position: absolute;
-    top: 1120px;
+    top: 1140px;
     right: -15vw;
     color: rgba(255, 255, 255, 0.2);
     font-size: 400px;
@@ -424,6 +445,11 @@
     align-items: center;
   }
 
+  .line-break::before {
+    content: "\a";
+    white-space: pre;
+  }
+
   .mobile-nav,
   .mobile-ham {
     display: none;
@@ -494,6 +520,14 @@
     color: var(--text-color1);
   }
 
+  .small-heading-desktop {
+    font-size: var(--font-smallheading);
+  }
+
+  .large-heading-desktop {
+    font-size: var(--font-largeheading);
+  }
+
   .semi-bold {
     font-weight: var(--font-semibold);
   }
@@ -560,6 +594,26 @@
     font-weight: var(--font-light);
     font-size: var(--font-paragraph);
     color: var(--bg-color2);
+  }
+
+  #to-contact-form {
+    position: absolute;
+    text-align: center;
+    top: 940px;
+    font-weight: var(--font-semibold);
+    font-size: var(--font-paragraph);
+  }
+
+  #to-contact-form > a {
+    display: block;
+    padding: 20px;
+    color: var(--bg-color2);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  #to-contact-form > a:hover {
+    color: var(--bg-color1);
   }
 
   .s3 {
