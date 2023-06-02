@@ -254,7 +254,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* overflow-x: hidden; */
   }
 
   .s1::after {
@@ -278,7 +277,6 @@
   .s2 {
     height: 953px;
     background-color: var(--bg-color3);
-    /* margin: -29px 0 0 0; */
     width: 100%;
     clip-path: polygon(0 29px, 100% 0, 100% 924px, 0 953px);
     -webkit-clip-path: polygon(0 29px, 100% 0, 100% 924px, 0 953px);
@@ -289,6 +287,10 @@
 
   .empty-container {
     width: 300px;
+  }
+
+  .divider-mobile-margin {
+    margin-top: 60px;
   }
 }
 
@@ -305,6 +307,10 @@
     width: 100vw;
     top: 0;
     font-family: var(--default-font);
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
   }
 
   nav {
