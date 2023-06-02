@@ -3,14 +3,6 @@ const mobileHam = document.querySelector(".mobile-ham");
 const html = document.querySelector("html");
 const mobileCancel = document.querySelector(".close-mobile-nav");
 
-mobileNav.addEventListener(
-  "touchmove",
-  (e) => {
-    e.preventDefault();
-  },
-  false
-);
-
 mobileHam.addEventListener("click", () => {
   mobileNav.classList.remove("mobile-nav-hidden");
   html.classList.add("overscroll-disable");
