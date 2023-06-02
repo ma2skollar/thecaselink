@@ -41,7 +41,7 @@
   }
 
   body {
-    width: 100vw;
+    width: 100%;
     margin: 0;
     padding: 0;
     font-family: var(--default-font);
@@ -101,17 +101,17 @@
 
   .mobile-nav {
     position: fixed;
-    overflow-x: hidden;
+    overflow: hidden auto;
     top: 0;
     right: 0;
     width: 100%;
+    height: 100vh;
     height: 100svh;
     background-color: var(--bg-color2);
     z-index: 10;
     transition: right 0.2s;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
   }
 
   .mobile-nav-hidden {
