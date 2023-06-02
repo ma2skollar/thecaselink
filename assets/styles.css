@@ -292,6 +292,38 @@
   .divider-mobile-margin {
     margin-top: 60px;
   }
+
+  #step1::before {
+    content: "1";
+    position: absolute;
+    top: 680px;
+    left: -18vw;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 400px;
+    font-family: var(--default-font);
+  }
+
+  #step2::before {
+    content: "2";
+    position: absolute;
+    top: 1120px;
+    right: -15vw;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 400px;
+    font-family: var(--default-font);
+  }
+
+  .s3 {
+    min-height: 530px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  footer {
+    background-color: var(--bg-color3);
+  }
 }
 
 @media screen and (min-width: 821px) {
