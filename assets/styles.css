@@ -202,7 +202,9 @@
   }
 
   .dark-text {
-
+    font-size: var(--font-paragraph);
+    font-weight: var(--font-light);
+    color: var(--text-color1);
   }
 
   .light-title {
