@@ -36,7 +36,69 @@
 
 @media screen and (max-width: 820px) {
   html {
+    overflow-x: hidden;
+  }
+
+  body {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav {
+    height: 70px;
+    width: 100%; 
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);  
+  }
+
+  nav > ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .nav_logo {
+    display: block;
+    box-sizing: border-box;
+  }
+
+  .nav_logo > svg {
+    width: 140px;
+    height: auto;
+    padding: 14px 0 14px 20px;
+  }
+
+  .inner-ul {
     display: none;
+  }
+
+  .mobile-ham {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    height: 19px;
+    width: 22px;
+    padding: 25px 20px 25px 20px;
+    cursor: pointer;
+  }
+
+  .ham-top,
+  .ham-mid,
+  .ham-bot {
+    width: 22px;
+    height: 3px;
+    background-color: var(--bg-color3);
+    border-radius: 0.5px;
+  }
+
+  .mobile-nav {
+    visibility: hidden;
   }
 }
 
@@ -132,6 +194,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .mobile-nav,
+  .mobile-ham {
+    display: none;
   }
 
   .s1 {
