@@ -46,6 +46,9 @@
     margin: 0;
     padding: 0;
     font-family: var(--default-font);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   nav {
@@ -528,6 +531,39 @@
   .footer-link {
     color: var(--bg-color2);
     text-decoration: none;
+    font-weight: var(--font-semibold);
+  }
+
+  /* 404 Site */
+  .error-flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: space-between;
+  }
+
+  .site-missing-heading {
+    font-size: var(--font-largeheading);
+    font-weight: var(--font-bold);
+    text-align: center;
+    position: relative;
+    margin: 80px 0 30px 0;
+  }
+
+  .site-missing-heading::before {
+    content: "404";
+    position: absolute;
+    transform: scale(8);
+    margin-top: -50px;    
+    z-index: -1;
+    opacity: 0.1;
+  }
+
+  .maxwidth-mobile {
+    max-width: 300px;
+  }
+
+  .mobile-thicker {
     font-weight: var(--font-semibold);
   }
 }
