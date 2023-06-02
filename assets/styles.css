@@ -188,6 +188,43 @@
     border: none;
     background-color: rgba(13, 14, 17, 0.2);
   }
+
+  .gradient-title {
+    font-size: var(--font-smallheading);
+    font-weight: var(--font-bold);
+    background: #005e8c;
+    background: -webkit-linear-gradient(to right, #005e8c 0%, #1479ca 100%);
+    background: -moz-linear-gradient(to right, #005e8c 0%, #1479ca 100%);
+    background: linear-gradient(to right, #005e8c 0%, #1479ca 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .dark-text {
+
+  }
+
+  .light-title {
+    font-size: var(--font-smallheading);
+    font-weight: var(--font-bold);
+    color: var(--bg-color2);
+  }
+
+  .light-text {
+
+  }
+
+  .large-heading {
+    font-size: var(--font-largeheading);
+  }
+
+  .large-heading::before,
+  .large-heading::after {
+    content: '\a';
+    white-space: pre;
+  }
+
 }
 
 @media screen and (min-width: 821px) {
