@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
     <title>Contact | TheCaseLink.com</title>
     <link rel="stylesheet" href="/assets/styles.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -160,13 +163,17 @@
       </div>
       <ul>
         <li><a href="/index.html#top">TheCaseLink.com</a></li>
-        <hr class="mobile-nav-hr">
+        <hr class="mobile-nav-hr" />
         <li><a href="/pages/about.html#top">About us</a></li>
         <li><a href="/pages/contact.html#top">Contact</a></li>
         <li><a href="/pages/contact.html#form">Email</a></li>
         <li><a href="/pages/contact.html#legal">Legal</a></li>
-        <li><a href="/assets/PrivacyPolicy_TheCaseLink.com_31052023.pdf" download>Privacy Policy</a></li>
-        <hr class="mobile-nav-hr">
+        <li>
+          <a href="/assets/PrivacyPolicy_TheCaseLink.com_31052023.pdf" download
+            >Privacy Policy</a
+          >
+        </li>
+        <hr class="mobile-nav-hr" />
         <li>
           <a href="https://www.facebook.com/thecaselink" target="_blank"
             >Facebook</a
@@ -182,14 +189,21 @@
         <li>
           <a href="https://twitter.com/TheCaseLink" target="_blank">Twitter</a>
         </li>
-        <li><a href="https://github.com/ma2skollar/thecaselink.github.io"
-          target="_blank">Github</a></li>
+        <li>
+          <a
+            href="https://github.com/ma2skollar/thecaselink.github.io"
+            target="_blank"
+            >Github</a
+          >
+        </li>
       </ul>
     </div>
     <main>
       <section class="s1">
         <article class="box-container">
-          <h1 class="gradient-title"><span class="large-heading">Contact Us</span></h1>
+          <h1 class="gradient-title">
+            <span class="large-heading">Contact Us</span>
+          </h1>
           <p class="dark-text">
             To get in touch with us just fill out the needed contact data in our
             contact form below. After we receive your email, one of our team
@@ -201,11 +215,11 @@
         </article>
       </section>
       <section class="s2" id="contact-form-section">
-        <hr id="form">
+        <hr id="form" />
         <article class="empty-container form-container">
           <h1 class="light-title">Leave Us a Message</h1>
           <p class="light-text mobile-invis center-text">
-            Please fill out your contact details below. 
+            Please fill out your contact details below.
           </p>
           <form onsubmit="sendEmail(); return false;">
             <input
@@ -243,7 +257,9 @@
       </section>
       <section class="s3" id="legal">
         <article class="empty-container">
-          <h1 class="gradient-title"><span class="large-heading">Legal</span></h1>
+          <h1 class="gradient-title">
+            <span class="large-heading">Legal</span>
+          </h1>
           <p class="dark-text links-recolor">
             The details of data collection by this website are written in detail
             in our privacy policy. If you have any more questions, do not
@@ -279,7 +295,9 @@
           <a href="/pages/about.html#top">About us</a>
         </div>
         <div class="second-row">
-          <a href="/pages/contact.html#top"><span class="semi-bold">Contact</span></a>
+          <a href="/pages/contact.html#top"
+            ><span class="semi-bold">Contact</span></a
+          >
           <a href="/pages/contact.html#form">Email</a>
           <!-- <a href="/pages/contact.html">Social</a> -->
         </div>
@@ -295,7 +313,9 @@
           <a href="https://www.facebook.com/thecaselink" target="_blank"
             ><img src="/assets/facebook.svg" alt="Facebook link"
           /></a>
-          <a href="https://www.linkedin.com/company/the-case-link/" target="_blank"
+          <a
+            href="https://www.linkedin.com/company/the-case-link/"
+            target="_blank"
             ><img src="/assets/linkedin.svg" alt="Linkedin link"
           /></a>
           <a href="/index.html"
@@ -313,10 +333,20 @@
         <div class="copyright-notice">
           <p class="light-text margin-desktop-bottom-10 center-text">
             Copyright © 2023 Blackwater Holdings Limited, s. r. o.
-            <br>
+            <br />
             All rights reserved.
             <br class="mobile-dbl-break" />
-            Made by <a href="https://www.matuskollar.com/" class="footer-link" id="author">Matúš Kollár</a> in collaboration with <a href="https://blackwaterholdings.sk/" class="footer-link">Blackwater Digital</a>.
+            Made by
+            <a
+              href="https://www.matuskollar.com/"
+              class="footer-link"
+              id="author"
+              >Matúš Kollár</a
+            >
+            in collaboration with
+            <a href="https://blackwaterholdings.sk/" class="footer-link"
+              >Blackwater Digital</a
+            >.
           </p>
         </div>
       </div>
@@ -337,6 +367,17 @@
       };
 
       const sendEmail = () => {
+        if (
+          content.value === "" ||
+          senderEmail.value === "" ||
+          senderName.value === "" ||
+          senderSurname.value === ""
+        ) {
+          formStatus.innerHTML =
+            "<span style='color: #ff5f52;'>✗</span> Please fill in all the fields!";
+          formStatus.style.display = "block";
+          return;
+        }
         Email.send({
           SecureToken: "47dd32cb-d19e-4dac-b9c7-9ac7fcd79303",
           To: "emailform@thecaselink.com",
