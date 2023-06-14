@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "TheCaseLink.com",
+    "short_name": "TheCaseLink",
     "icons": [
         {
             "src": "/android-chrome-192x192.png?v=2.0",
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#0999ff",
+    "background_color": "#0999ff",
     "display": "standalone"
 }
