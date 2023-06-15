@@ -659,6 +659,9 @@
   .inner-ul {
     display: flex;
     justify-content: flex;
+    margin: none;
+    padding: none;
+    list-style: none;
   }
 
   .inner-ul > li > a {
