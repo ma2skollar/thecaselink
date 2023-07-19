@@ -193,6 +193,7 @@
   }
 
   .mobile-nav-hr {
+    display: block;
     min-width: 100px;
     margin: 15px 40px 14px 40px;
     height: 1px;
