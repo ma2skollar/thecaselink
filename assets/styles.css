@@ -113,7 +113,7 @@
     right: 0;
     width: 100%;
     height: 100vh;
-    height: 100svh;
+    height: 100dvh;
     background-color: var(--bg-color2);
     z-index: 10;
     transition: right 0.2s;
@@ -128,6 +128,10 @@
   .overscroll-disable {
     overscroll-behavior: none;
     overflow-y: hidden;
+  }
+
+  .fix-body {
+    position: fixed
   }
 
   .close-mobile-nav {
