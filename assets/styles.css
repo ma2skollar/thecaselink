@@ -131,7 +131,7 @@
   }
 
   .fix-body {
-    position: fixed
+    position: fixed;
   }
 
   .close-mobile-nav {
@@ -200,6 +200,33 @@
     box-sizing: border-box;
     border: none;
     background-color: rgba(13, 14, 17, 0.2);
+  }
+
+  .scroll-up-arrow-container {
+    height: 44px;
+    width: 44px;
+    background-color: var(--hl-color2);
+    position: fixed;
+    bottom: 14px;
+    right: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .scroll-up-arrow-container > svg {
+    height: 20px;
+    width: 20px;
+  }
+
+  .visible-scroll-up-arrow {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .gradient-title {
@@ -277,7 +304,6 @@
     margin: 228px -12px 0 0;
     opacity: 0.05;
     z-index: -1;
-
   }
 
   .box-container {
@@ -309,7 +335,7 @@
     position: absolute;
     top: 1150px;
     left: 50%;
-    transform: translateX(-50%);          
+    transform: translateX(-50%);
     font-weight: var(--font-semibold);
     font-size: var(--font-paragraph);
     text-align: center;
@@ -487,8 +513,8 @@
   .field:focus-within,
   .field:focus-visible,
   .field:focus {
-    border: 1px solid var(--h1-color3); 
-    outline: none; 
+    border: 1px solid var(--h1-color3);
+    outline: none;
   }
   .links-recolor > a {
     color: var(--text-color1);
@@ -518,7 +544,7 @@
   .first-row,
   .second-row,
   .third-row,
-  .socials{
+  .socials {
     display: none;
   }
 
@@ -591,7 +617,7 @@
     content: "404";
     position: absolute;
     transform: scale(3);
-    margin-top: -50px;    
+    margin-top: -50px;
     z-index: -1;
     opacity: 0.2;
   }
@@ -618,9 +644,9 @@
     width: 100vw;
     top: 0;
     font-family: var(--default-font);
-    min-height: 100vh; 
-    display: flex; 
-    flex-direction: column; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
   }
 
@@ -698,6 +724,10 @@
   .inner-ul > li > a.active:hover {
     color: var(--bg-color1);
     background-color: var(--hl-color3);
+  }
+
+  .scroll-up-arrow-container {
+    display: none;
   }
 
   main {
@@ -895,7 +925,7 @@
     background-color: var(--hl-color3);
     color: var(--text-color2);
   }
-  
+
   .s3 {
     min-height: 590px;
     width: 100%;
