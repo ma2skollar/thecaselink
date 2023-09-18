@@ -33,9 +33,6 @@ document.addEventListener('scroll', () => {
   const bodyRect = body.getBoundingClientRect()
   const scrollUpArrowRect = scrollUpArrow.getBoundingClientRect()
   const offset = scrollUpArrowRect.top - bodyRect.top;
-  console.log(window.innerHeight * 1.1)
-  console.log(bodyRect.top)
-  console.log(scrollUpArrowRect.top)
   if (offset > (window.innerHeight * 1.1)) scrollUpArrow.classList.add('visible-scroll-up-arrow')
   else scrollUpArrow.classList.remove('visible-scroll-up-arrow')
 });
